@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	 body {
+		-webkit-app-region: drag;
+       }
+       button {
+		-webkit-app-region: no-drag;
+       }
+        input {
+		-webkit-app-region: no-drag;
+       }
+	</style>
+</head>
+
+<body>
+
+	<h1>Hello GUI</h1>
+	<input id="fileDialog" type="file" />文件 
+	<button onclick="process.mainModule.exports.callback0()">调用node的自定义callback</button>
+	<button onclick="process.mainModule.exports.runCmd()">调用node的runCmd</button>
+	<button onclick="getPath()">获得path</button>
+	<button onclick="closeW()">关闭</button>
+
+	<script>
+		var gui = require('nw.gui');
+
+	   var app = gui.App;
+
+	   var chooser = document.querySelector('#fileDialog');
+
+        chooser.addEventListener("change", function (evt) {
+
+            apendText(this.value);
+
+        }, false);
+
+    function apendText(text) {
+
+        var element = document.createElement('div');
+
+        element.appendChild(document.createTextNode(text));
+
+        document.body.appendChild(element);
+
+    }
+
+	   function closeW() {
+
+	   	app.closeAllWindows()
+	   }
+
+	   function getPath() {
+	   	alert(app.dataPath);
+	   }
+
+
+    </script>
+
+</body>
+
+</html>

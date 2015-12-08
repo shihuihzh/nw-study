@@ -1,0 +1,21 @@
+{
+
+  "name": "node-demo",
+  "main": "helloworld.html",
+  "nodeJs": true,
+  "node-main": "hello.js",
+  "width": 100,
+  "height": 200,
+  "window": {
+  	"title": "123",
+  	"toolbar": false,
+  	"width": 200,
+  	"height": 200,
+  	"resizale":false,
+  	"show_in_taskbar":true,
+  	"frame":true,
+  	"kiosk":false
+
+  }
+
+}
